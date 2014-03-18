@@ -15,7 +15,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="0.2726" bValue="0.6877" minMag="3.0" maxMag="7.0"/>
+      <truncGutenbergRichterMFD aValue="1.97574710622" bValue="0.6877" minMag="3.0" maxMag="7.0"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -37,7 +37,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="0.3755" bValue="0.6457" minMag="3.0" maxMag="6.5"/>
+      <truncGutenbergRichterMFD aValue="1.98883119606" bValue="0.6457" minMag="3.0" maxMag="6.5"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -59,7 +59,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="2.0301" bValue="1.0908" minMag="3.0" maxMag="6.0"/>
+      <truncGutenbergRichterMFD aValue="4.05703868592" bValue="1.0908" minMag="3.0" maxMag="6.0"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -81,7 +81,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="0.7375" bValue="0.8469" minMag="3.0" maxMag="7.0"/>
+      <truncGutenbergRichterMFD aValue="2.88558327937" bValue="0.8469" minMag="3.0" maxMag="7.0"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -103,7 +103,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="1.7477" bValue="0.9569" minMag="3.0" maxMag="6.0"/>
+      <truncGutenbergRichterMFD aValue="3.59028814096" bValue="0.9569" minMag="3.0" maxMag="6.0"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -125,7 +125,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="0.7537" bValue="1.1017" minMag="3.0" maxMag="5.5"/>
+      <truncGutenbergRichterMFD aValue="3.65941976999" bValue="1.1017" minMag="3.0" maxMag="5.5"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -147,7 +147,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="1.539" bValue="0.7629" minMag="3.0" maxMag="7.0"/>
+      <truncGutenbergRichterMFD aValue="2.95305987455" bValue="0.7629" minMag="3.0" maxMag="7.0"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>
@@ -169,7 +169,7 @@
       </areaGeometry>
       <magScaleRel>WC1994</magScaleRel>
       <ruptAspectRatio>1</ruptAspectRatio>
-      <truncGutenbergRichterMFD aValue="2.4425" bValue="1.3391" minMag="3.0" maxMag="6.0"/>
+      <truncGutenbergRichterMFD aValue="4.88225582711" bValue="1.3391" minMag="3.0" maxMag="6.0"/>
       <nodalPlaneDist>
         <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
       </nodalPlaneDist>

@@ -5,6 +5,7 @@ from openquake.hazardlib import geo
 
 #from decimal import Decimal
 import glob
+import numpy as np
 
 sources = []
 for i, f_geom in enumerate(glob.glob("*.eq.src")):
@@ -16,13 +17,13 @@ for i, f_geom in enumerate(glob.glob("*.eq.src")):
     print "m====>", m_min, m_max
     b, b_sigma = f.readline().strip().split(" ")
     print "b====>", b, b_sigma
-    a, a_sigma = f.readline().strip().split(" ")
-    print "a====>", a, a_sigma
+    l, l_sigma = f.readline().strip().split(" ")
+    print "a====>", l, l_sigma
 
     mfd = models.TGRMFD(min_mag = m_min,
                         max_mag = m_max, 
                         b_val = float(b), 
-                        a_val = float(a))
+                        a_val = np.log10(float(l)*float(m_min)) + float(b)*float(m_min))
 
     points=[]
     for g in open(f_geom, 'r').readlines():
