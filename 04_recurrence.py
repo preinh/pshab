@@ -77,7 +77,7 @@ earthquake_count = get_completeness_adjusted_table(catalogue,
 #for row in earthquake_count:
 #    print '%6.2f %10.3f %10.3f %10.3f' %(row[0], row[1], row[2], row[3]) 
 
-plot_observed_recurrence(catalogue, completeness, magnitude_bin, catalogue.end_year)
+plot_observed_recurrence(catalogue, completeness_table, magnitude_bin, catalogue.end_year)
 
 
 # In[ ]:

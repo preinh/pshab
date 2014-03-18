@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nrml xmlns:gml="http://www.opengis.net/gml" xmlns="http://openquake.org/xmlns/nrml/0.4">
+  <sourceModel name="PSHAB">
+    <areaSource id="0" name="acre" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-74.03 -5.85 -74.5 -9.83 -69.43 -12.02 -69.31 -10.17 -74.03 -5.85</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="0.1216" bValue="0.5447" minMag="3.0" maxMag="7.0"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="1" name="amazonas" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-60.11 3.33 -64.11 0.94 -64.13 -4.34 -57.14 -5.22 -58.97 3.26 -60.11 3.33</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="0.2265" bValue="0.5257" minMag="3.0" maxMag="6.5"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="2" name="co_norte" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-50.57 1.36 -51.59 -1.33 -51.35 -9.796 -50.5 -12.0 -52.89 -15.77 -56.47 -15.21 -58.62 -18.8 -58.68 -21.57 -56.87 -22.53 -55.44 -22.06 -54.36 -18.72 -50.93 -17.75 -48.22 -14.91 -46.88 -13.24 -49.3 -7.95 -48.11 -0.06 -50.57 1.36</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="1.8871" bValue="1.0108" minMag="3.0" maxMag="6.0"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="3" name="matogrosso" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-58.73 -10.33 -58.74 -13.54 -55.94 -13.59 -56.58 -10.31 -58.73 -10.33</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="0.6085" bValue="0.7519" minMag="3.0" maxMag="7.0"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="4" name="nordeste1" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-41.63 -4.05 -38.5 -6.15 -34.45 -7.68 -34.47 -4.97 -40.22 -2.47 -41.63 -4.05</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="1.6157" bValue="0.8849" minMag="3.0" maxMag="6.0"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="5" name="nordeste2" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-37.02 -7.09 -41.19 -14.06 -37.89 -14.25 -33.98 -8.08 -37.02 -7.09</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="0.6107" bValue="0.9657" minMag="3.0" maxMag="5.5"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="6" name="shelf" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-39.5 -19.3 -36.1 -19.3 -36.1 -20.0 -39.6 -24.0 -45.7 -28.0 -49.0 -32.4 -50.0 -31.9 -48.0 -26.8 -46.2 -24.8 -42.0 -23.0 -39.5 -19.3</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="1.365" bValue="0.6659" minMag="3.0" maxMag="7.0"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+    <areaSource id="7" name="sul_sudeste" tectonicRegion="stable crust">
+      <areaGeometry>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>-39.14 -14.58 -45.99 -14.03 -49.31 -20.11 -50.47 -22.88 -51.11 -26.16 -48.89 -27.89 -48.49 -25.45 -45.62 -23.67 -42.6 -22.79 -40.7 -21.35 -39.01 -16.69 -39.14 -14.58</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+        <upperSeismoDepth>0</upperSeismoDepth>
+        <lowerSeismoDepth>30</lowerSeismoDepth>
+      </areaGeometry>
+      <magScaleRel>WC1994</magScaleRel>
+      <ruptAspectRatio>1</ruptAspectRatio>
+      <truncGutenbergRichterMFD aValue="2.2925" bValue="1.2431" minMag="3.0" maxMag="6.0"/>
+      <nodalPlaneDist>
+        <nodalPlane probability="1.0" strike="0.0" dip="90.0" rake="0.0"/>
+      </nodalPlaneDist>
+      <hypoDepthDist>
+        <hypoDepth probability="1.0" depth="10.0"/>
+      </hypoDepthDist>
+    </areaSource>
+  </sourceModel>
+</nrml>
