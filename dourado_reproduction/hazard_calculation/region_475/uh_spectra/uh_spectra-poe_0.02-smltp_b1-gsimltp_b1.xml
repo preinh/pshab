@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nrml xmlns:gml="http://www.opengis.net/gml" xmlns="http://openquake.org/xmlns/nrml/0.4">
+  <uniformHazardSpectra sourceModelTreePath="b1" gsimTreePath="b1" investigationTime="475.0" poE="0.02">
+    <periods>0.0</periods>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-40.0879317688 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.0296760121902</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-40.1662766004 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.172079956629</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-40.240454318 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.174432243261</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-40.3106030362 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.174241704202</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-40.3768511379 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.168970257171</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-41.1892726834 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.157022280199</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-41.2589125337 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.174429361666</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-41.3248482827 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.173865967555</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-41.3872026989 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0874347697633</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-41.4460899004 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0356102746025</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-42.2906135979 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.174256785932</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-42.351548467 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.174326216157</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-42.4092422474 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.059917096391</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-42.4638023615 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0314034915826</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-42.5153286628 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0259583113548</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-43.3919545125 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.17455890695</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-43.4441844003 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.172040083535</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-43.493636212 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.034087499508</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-43.5404020241 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0259277456843</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-43.5845674253 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251546543667</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-44.4932954271 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.174516353945</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-44.5368203335 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.0737462834067</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-44.5780301767 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.0291565920779</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-44.6170016868 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251529459187</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-44.6538061877 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251537073519</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-45.5946363417 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.173043024097</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-45.6294562668 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.0300368301624</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-45.6624241414 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.0262003536453</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-45.6936013494 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251563283134</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-45.7230449502 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251542483467</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-46.6959772563 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.048574209059</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-46.7220922001 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.0287266260552</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-46.746818106 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251595499208</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-46.7702010121 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251568633879</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-46.7922837126 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.025154690006</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-47.7973181708 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.0239700009735</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-47.8147281334 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.0253778831436</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-47.8312120707 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251573764485</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-47.8468006747 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251566643551</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-47.8615224751 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251540047353</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-48.8986590854 -24.9912349128</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251466097187</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-48.9073640667 -23.9929879303</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251567633907</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-48.9156060353 -22.9947409477</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251549135948</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-48.9234003374 -21.9964939651</gml:pos>
+      </gml:Point>
+      <IMLs>0.0251434363587</IMLs>
+    </uhs>
+    <uhs>
+      <gml:Point>
+        <gml:pos>-48.9307612375 -20.9982469826</gml:pos>
+      </gml:Point>
+      <IMLs>0.0250828282532</IMLs>
+    </uhs>
+  </uniformHazardSpectra>
+</nrml>
