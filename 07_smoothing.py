@@ -17,8 +17,8 @@ from hmtk.seismicity.smoothing.kernels.isotropic_gaussian import \
     IsotropicGaussian
 
 BASE_PATH = 'data_input/'
-OUTPUT_FILE = 'hmtk_bsb2013_smoothing_data.csv'
-TEST_CATALOGUE = 'hmtk_bsb2013.csv'
+OUTPUT_FILE = 'hmtk_bsb2013_decluster_smoothing_data.csv'
+TEST_CATALOGUE = 'hmtk_bsb2013_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 
