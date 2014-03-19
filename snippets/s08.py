@@ -9,7 +9,7 @@ import numpy as np
 
 m0=2.5
 sources = []
-smooth = np.genfromtxt("../hmtk_bsb2013_decluster_smoothing_data.csv", delimiter=",",skip_header=True)
+smooth = np.genfromtxt("../hmtk_bsb2013_decluster_smooth_data.csv", delimiter=",",skip_header=True)
 for i, line in enumerate(smooth):
     #print line
     p = mtkPointSource(identifier = i,
@@ -33,5 +33,5 @@ s = source_model.mtkSourceModel(identifier="02",
                                 name = "PSHAB-Smoothed (decluster)", 
                                 sources = sources)
  
-s.serialise_to_nrml(filename = "source_model_pshab_decluster_smoothed.xml", 
+s.serialise_to_nrml(filename = "source_model_pshab_decluster_smooth.xml", 
                     use_defaults = True)

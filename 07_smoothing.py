@@ -17,7 +17,7 @@ from hmtk.seismicity.smoothing.kernels.isotropic_gaussian import \
     IsotropicGaussian
 
 BASE_PATH = 'data_input/'
-OUTPUT_FILE = 'hmtk_bsb2013_decluster_smoothing_data.csv'
+OUTPUT_FILE = 'hmtk_bsb2013_decluster_smooth_data.csv'
 TEST_CATALOGUE = 'hmtk_bsb2013_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
@@ -25,6 +25,9 @@ _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 # catalogue
 parser = CsvCatalogueParser(_CATALOGUE)
 catalogue = parser.read_file()
+
+catalogue.sort_catalogue_chronologically()
+print catalogue.get_number_events()
 
 # model
 #[xmin, xmax, spcx, ymin, ymax, spcy, zmin, spcz]
@@ -39,13 +42,13 @@ comp_table = np.array([[1990., 2.0],
                        [1910., 6.5]])
 
 #config
-config = {'Length_Limit': 3., 'BandWidth': 100., 'increment': 1.0}
+config = {'Length_Limit': 3., 'BandWidth': 100., 'increment': 2.0}
 
 #smoothing
 output_data = model.run_analysis(catalogue,
                                  config,
                                  completeness_table=comp_table,
                                  smoothing_kernel = IsotropicGaussian())
-print output_data
+#print output_data
 # export results
 model.write_to_csv(OUTPUT_FILE)
