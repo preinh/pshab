@@ -42,7 +42,7 @@ comp_table = np.array([[1990., 2.0],
                        [1910., 6.5]])
 
 #config
-config = {'Length_Limit': 3., 'BandWidth': 100., 'increment': 2.0}
+config = {'Length_Limit': 3., 'BandWidth': 100., 'increment': 1.0}
 
 #smoothing
 output_data = model.run_analysis(catalogue,
