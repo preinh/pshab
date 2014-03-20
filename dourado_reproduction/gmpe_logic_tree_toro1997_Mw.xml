@@ -8,7 +8,7 @@
 
         <logicTreeBranchSet uncertaintyType="gmpeModel" branchSetID="bs1" applyToTectonicRegionType="Stable Continental Crust">
                 <logicTreeBranch branchID="b1">
- <uncertaintyModel>ToroEtAl1997MwNSHMP2008</uncertaintyModel>
+ <uncertaintyModel>ToroEtAl1997NSHMP2008</uncertaintyModel>
                     <uncertaintyWeight>1.0</uncertaintyWeight>
                 </logicTreeBranch>
             </logicTreeBranchSet></logicTreeBranchingLevel>
