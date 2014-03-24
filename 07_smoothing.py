@@ -35,11 +35,9 @@ grid_limits = Grid.make_from_list([ -80, -30, 1, -37, 14, 1, 0, 30, 10])
 model = SmoothedSeismicity(grid_limits, bvalue=1.0)
 
 # Time-varying completeness
-comp_table = np.array([[1990., 2.0],
-                       [1980., 3.0],
-                       [1960., 4.0],
-                       [1950., 5.0],
-                       [1910., 6.5]])
+comp_table = np.array([[1980., 3.5],
+                       [1970., 4.5],
+                       [1960., 5.0]])
 
 #config
 config = {'Length_Limit': 3., 'BandWidth': 100., 'increment': 1.0}

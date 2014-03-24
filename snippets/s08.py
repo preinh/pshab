@@ -7,7 +7,7 @@ from hmtk.sources.point_source import mtkPointSource
 import glob
 import numpy as np
 
-m0=2.5
+m0=3.0
 sources = []
 smooth = np.genfromtxt("../hmtk_bsb2013_decluster_smooth_data.csv", delimiter=",",skip_header=True)
 for i, line in enumerate(smooth):
