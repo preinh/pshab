@@ -1,12 +1,12 @@
 import numpy as np
-from scipy import optimize
+from scipy import spatial, optimize
 
-from sklearn import neighbors as nn
+#from sklearn import neighbors as nn
 
 from matplotlib import pylab as pl
 
-k = 5
-a = 80
+k = 8
+a = 20
 
 _x = np.linspace(0, 100, 50)
 _y = np.linspace(0, 100, 50)
@@ -16,20 +16,17 @@ xx, yy = np.meshgrid(_x, _y)
 X = np.array(zip(xx.ravel(), yy.ravel()))
 
 def knn(X, k, pos):
-    knn = nn.NearestNeighbors(n_neighbors=k, 
-                              metric='euclidean').fit(X)
-    #print knn.kneighbors(X, k, return_distance=True)
-    _d, _i = knn.kneighbors([0,0], k, return_distance=True)
+#     knn = nn.NearestNeighbors(n_neighbors=k, 
+#                               metric='euclidean').fit(X)
+#     #print knn.kneighbors(X, k, return_distance=True)
+#     _d, _i = knn.kneighbors([0,0], k, return_distance=True)
 
-
+    tree = spatial.KDTree(X)
+    _d, _i = tree.query([0,0], k)
+#    print np.ndarray(_d[0])
+#    print np.array(_i[0])
+    #print _d[0], _i[0], X[_i[0]]
 #    print _d, _i, X[_i]
-
-#             import scipy.spatial
-#             t = scipy.spatial.KDTree(X[1:])
-#             _d, _i = t.query([0,0], k)
-            #print np.ndarray(_d[0])
-#             print np.array(_i[0])
-#            print _d[0], _i[0], X[_i[0]]
 
     
 #     pl.scatter(xx.ravel(), yy.ravel())
