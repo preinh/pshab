@@ -20,7 +20,7 @@ print 'Imports OK!'
 
 # In[ ]:
 
-input_catalogue_file = 'data_input/hmtk_bsb2013.csv'
+input_catalogue_file = 'data_input/hmtk_chile.csv'
 #input_catalogue_file = 'data_input/hmtk_sa.csv'
 
 parser = CsvCatalogueParser(input_catalogue_file)
@@ -41,26 +41,35 @@ print 'Catalogue sorted chronologically!'
 # Configure the limits of the map and the coastline resolution
 map_config = {'min_lon': -80.0, 'max_lon': -30.0, 'min_lat': -37.0, 'max_lat': 14.0, 'resolution':'l'}
 
+map_config = {'min_lon': -72.0, 'max_lon': -68.0, 'min_lat': -22.0, 'max_lat': -18.0, 'resolution':'l'}
+
 # Create a hmtk basemap
 basemap1 = HMTKBaseMap(map_config, 'Earthquake Catalogue')
 # Add a catalogue
-basemap1.add_catalogue(catalogue)
+#basemap1.add_catalogue(catalogue)
 
+valid_magnitudes = catalogue.data['magnitude'] <> np.nan
+catalogue.select_catalogue_events(valid_magnitudes)
+valid_magnitudes = catalogue.data['magnitude'] >= 2.0
+catalogue.select_catalogue_events(valid_magnitudes)
+print catalogue.data['magnitude']
 
+valid_depths = catalogue.data['depth'] <> np.nan
+catalogue.select_catalogue_events(valid_depths)
 # In[ ]:
 
 # Limit the catalogue to the time period 1960 - 2012
-valid_time = np.logical_and(catalogue.data['year'] >= 1900,
+valid_time = np.logical_and(catalogue.data['year'] >= 1960,
                             catalogue.data['year'] <= 2014)
 catalogue.select_catalogue_events(valid_time)
-plot_magnitude_time_density(catalogue, 0.2, 2.0)
+#plot_magnitude_time_density(catalogue, 0.5, 2.0)
 print 'Catalogue now contains %s events' % catalogue.get_number_events()
 
 
 # In[ ]:
 
 # Show distribution of magnitudes with time
-plot_magnitude_time_scatter(catalogue, fmt_string='.')
+#plot_magnitude_time_scatter(catalogue, fmt_string='.')
 
 
 # In[ ]:
@@ -74,7 +83,7 @@ plot_magnitude_time_density(catalogue, magnitude_bin, time_bin)
 # In[ ]:
 
 # Depth histogram
-plot_depth_histogram(catalogue, 10.)
+#plot_depth_histogram(catalogue, 10.)
 
 
 # In[ ]:
@@ -83,18 +92,19 @@ plot_depth_histogram(catalogue, 10.)
 completeness = np.array([[1980., 3.0],
                          [1985., 4.0],
                          [1964., 5.0],
-                         [1910., 6.5]])
+                         [1910., 6.5],
+                         [1900., 9.0]])
 plot_observed_recurrence(catalogue, completeness, 0.2, catalogue.end_year)
 
 
 # In[ ]:
 
 # Limit the catalogue to depths less than 50 km
-valid_depth = catalogue.data['depth'] <= 50.
-catalogue.select_catalogue_events(valid_depth)
+#valid_depth = catalogue.data['depth'] <= 50.
+#catalogue.select_catalogue_events(valid_depth)
 plot_depth_histogram(catalogue, 2.0)
 
-
+exit()
 # In[ ]:
 
 # Set-up the file writer
