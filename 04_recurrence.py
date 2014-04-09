@@ -89,12 +89,12 @@ recurrence_config = {'reference_magnitude': None,
 
 bml_recurrence = BMaxLikelihood()
 
-bval, sigmab, rate, sigma_rate = bml_recurrence.calculate(catalogue, 
+bval, sigmab, seismicity_rate, sigma_rate = bml_recurrence.calculate(catalogue, 
                                                           recurrence_config, 
                                                           completeness_table)
 
 print 'B-value = %9.4f +/- %9.4f' %(bval, sigmab)
-print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(rate, sigma_rate)
+print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(seismicity_rate, sigma_rate)
 
 
 # In[ ]:
@@ -102,12 +102,12 @@ print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(rate, sigma_rate)
 # Set up the configuration parameters
 bks_recurrence = KijkoSmit()
 
-bval, sigmab, rate, sigma_rate = bks_recurrence.calculate(catalogue, 
+bval, sigmab, seismicity_rate, sigma_rate = bks_recurrence.calculate(catalogue, 
                                                           recurrence_config, 
                                                           completeness_table)
 
 print 'B-value = %9.4f +/- %9.4f' % (bval, sigmab)
-print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' % (rate, sigma_rate)
+print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' % (seismicity_rate, sigma_rate)
 
 
 # In[ ]:
@@ -115,12 +115,12 @@ print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' % (rate, sigma_rate)
 # Set up the configuration parameters
 bwc_recurrence = Weichert()
 
-bval, sigmab, rate, sigma_rate = bwc_recurrence.calculate(catalogue, 
+bval, sigmab, seismicity_rate, sigma_rate = bwc_recurrence.calculate(catalogue, 
                                                           recurrence_config, 
                                                           completeness_table)
 
 print 'B-value = %9.4f +/- %9.4f' %(bval, sigmab)
-print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(rate, sigma_rate)
+print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(seismicity_rate, sigma_rate)
 
 
 # In[ ]:
