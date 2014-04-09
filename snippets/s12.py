@@ -29,7 +29,7 @@ for i, line in enumerate(r[1:]):
         rupt_aspect_ratio=1.0,
         mfd=models.TGRMFD(min_mag=m0, 
                           max_mag=7.0,
-                          a_val=float(line[2]), 
+                          a_val=np.log10(float(line[2])*m0) + 1.0*m0, 
                           b_val=1.0),
         nodal_plane_dist=None,
         hypo_depth_dist=None)
