@@ -11,8 +11,8 @@ m_min, m_max = 3.0, 7.0
 sources = []
 smooth = np.genfromtxt("data_output/hmtk_bsb2013_decluster_frankel1995.csv", delimiter=",",skip_header=True)
 for i, line in enumerate(smooth):
-    #print line
-    if not line[4] == np.nan:
+    if str(line[4]) != "nan":
+    	#print line[4]
         p = mtkPointSource(identifier = i,
             name = "%s"%i,
             trt='Stable Continental Crust',
