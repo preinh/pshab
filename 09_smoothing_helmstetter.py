@@ -20,6 +20,12 @@ OUTPUT_FILE = 'hmtk_bsb2013_helmstetter2012.csv'
 TEST_CATALOGUE = 'hmtk_bsb2013_decluster.csv'
 #TEST_CATALOGUE = 'hmtk_bsb2013.csv'
 
+#TAIWAN
+BASE_PATH = 'data_input/'
+OUTPUT_FILE = 'hmtk_taiwan_helmstetter2012.csv'
+TEST_CATALOGUE = 'hmtk_taiwan.csv'
+
+
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 
 # catalogue
@@ -35,29 +41,75 @@ comp_table = np.array([[1980., 3.5],
                        [1970., 4.5],
                        [1960., 5.0]])
 
-comp_table = np.array([[1990., 3.0],
-                       [1980., 3.5],
-                       [1970., 4.5],
-                       [1960., 5.0],
-                       [1900., 6.5],
-                       [1800., 7.0]])
-
-# comp_table = np.array([[2000., 2.5],
-#                        [1990., 3.0],
+# comp_table = np.array([[1990., 3.0],
 #                        [1980., 3.5],
 #                        [1970., 4.5],
 #                        [1960., 5.0],
 #                        [1900., 6.5],
 #                        [1800., 7.0]])
 
-res, spc = 0.5, 100
-res, spc = 1, 50
-#res, spc = 0.25, 200
+comp_table = np.array([[2000., 2.5],
+                       [1990., 3.0],
+                       [1980., 3.5],
+                       [1970., 4.5],
+                       [1960., 5.0],
+                       [1900., 6.5],
+                       [1800., 7.0]])
+
+comp_table = np.array([[ 2005, 2.5],
+                        [ 2002,3. ],
+                        [ 2000,3.5],
+                        [ 1998,4. ],
+                        [ 1997,4.5],
+                        [ 1997,5. ],
+                        [ 1992,5.5],
+                        [ 1992,6. ],
+                        [ 1988,6.5],
+                        [ 1988,7. ]])
+
+completeness = False
+if completeness:
+    from hmtk.seismicity.completeness.comp_stepp_1971 import Stepp1971
+    stepp = Stepp1971()
     
+    completeness_config = {'magnitude_bin': 0.5,
+                           'time_bin': 5,
+                           'increment_lock': True}
+    print completeness_config
+    
+    # Run analysis
+    print 'Running Stepp (1971) completeness analysis:'
+    completeness_table = stepp.completeness(catalogue, completeness_config)
+    print completeness_table
+    print 'done!'
+
+    # Print the output completeness table
+    #for row in completeness_table:
+    #    print '%8.1f  %8.2f' %(row[0], row[1])
+    
+    
+    # In[ ]:
+    
+    from hmtk.plotting.seismicity.completeness.plot_stepp_1972 import create_stepp_plot
+    create_stepp_plot(stepp, "data_output/stepp_plot_taiwan_01.png")
+    
+
+
+
+res, spc = 0.5, 100
+#res, spc = 1, 50
+#res, spc = 0.1, 500
+
+#[xmin, xmax, spcx, ymin, ymax, spcy, zmin, zmax, spcz]
+_l = [ 118.5,  124,  res,  20.0,   26.5,  res,    0,   300,   300]
+nx = round((_l[1] - _l[0]) / _l[2],0)
+ny = round((_l[4] - _l[3]) / _l[5],0)
+grid_shape = (nx, ny)
 # create grid specifications
-grid_limits = utils.Grid.make_from_list(
-    #[xmin, xmax, spcx, ymin, ymax, spcy, zmin, zmax, spcz]
-     [ -80,  -30,  res,  -37,   13,  res,    0,   30,   30])
+grid_limits = utils.Grid.make_from_list(_l)
+    
+    #[ -80,  -30,  res,  -37,   13,  res,    0,   30,   30])
+    #[ 118.5,  124,  res,  20.0,   26.5,  res,    0,   300,   300])
 
 
 # configure 
@@ -65,8 +117,8 @@ config = {'grid_limits' : grid_limits,
           'completeness_table' : comp_table,
           'b_value' : 1.0, 
           'stationary_time_step_in_days': 365,
-          'catalogue_year_start': 1950,
-          'catalogue_year_divisor': 2000,
+          'catalogue_year_start': 1960,
+          'catalogue_year_divisor': 2010,
           'target_minimum_magnitude': 3.5,
           'add_before_learning_on_target': True,
           'log': True,
@@ -155,10 +207,9 @@ _m = s.learning_catalogue.data['magnitude']
 # plt.show()
 
 
-
 from map import rate_map
 m = rate_map(x, y, r, "alpha [Helmstetter2012]", 
-             spc, s.learning_catalogue, origin='lower')
+             (nx,ny), s.learning_catalogue, origin='lower')
 m.show()
 
 
@@ -170,7 +221,7 @@ m.show()
 #             )
 
 m = rate_map(x, y, a, "a-value [Helmstetter2012]", 
-             spc, s.learning_catalogue, origin='lower')
+             (nx,ny), s.learning_catalogue, origin='lower')
 m.show()
 
 #print output_data

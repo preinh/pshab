@@ -4,11 +4,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class rate_map(object):
-    def __init__(self, x, y, rate, title, res, catalogue=None, origin='upper'):
+    def __init__(self, x, y, rate, title, (nx,ny), catalogue=None, origin='upper'):
         
         # define region and resolution
-        x0, xf, nx = -80, -30, res
-        y0, yf, ny = -37, 13, res
+        x0, xf, nx = -80, -30, nx
+        y0, yf, ny = -37, 13, ny
+    
+        x0, xf, nx = 118.5, 124, nx
+        y0, yf, ny = 20, 26.5, ny
     
         self.catalogue = catalogue
     
