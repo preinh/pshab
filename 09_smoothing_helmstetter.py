@@ -17,13 +17,15 @@ from hmtk.seismicity.smoothing.kernels.isotropic_gaussian import \
 
 BASE_PATH = 'data_input/'
 OUTPUT_FILE = 'hmtk_bsb2013_helmstetter2012.csv'
-TEST_CATALOGUE = 'hmtk_bsb2013_decluster.csv'
-#TEST_CATALOGUE = 'hmtk_bsb2013.csv'
+#TEST_CATALOGUE = 'hmtk_bsb2013_decluster.csv'
+TEST_CATALOGUE = 'hmtk_bsb2013.csv'
 
 #TAIWAN
 BASE_PATH = 'data_input/'
 OUTPUT_FILE = 'hmtk_taiwan_helmstetter2012.csv'
 TEST_CATALOGUE = 'hmtk_taiwan.csv'
+
+calculate_completeness = False
 
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
@@ -34,6 +36,9 @@ catalogue = parser.read_file()
 
 catalogue.sort_catalogue_chronologically()
 print catalogue.get_number_events()
+
+print min(catalogue.data['year']), max(catalogue.data['year'])
+
 
 # Time-varying completeness
 
@@ -67,8 +72,7 @@ comp_table = np.array([[ 2005, 2.5],
                         [ 1988,6.5],
                         [ 1988,7. ]])
 
-completeness = False
-if completeness:
+if calculate_completeness:
     from hmtk.seismicity.completeness.comp_stepp_1971 import Stepp1971
     stepp = Stepp1971()
     
@@ -117,9 +121,9 @@ config = {'grid_limits' : grid_limits,
           'completeness_table' : comp_table,
           'b_value' : 1.0, 
           'stationary_time_step_in_days': 365,
-          'catalogue_year_start': 1960,
-          'catalogue_year_divisor': 2010,
-          'target_minimum_magnitude': 3.5,
+          'catalogue_year_start': 1986,
+          'catalogue_year_divisor': 2011,
+          'target_minimum_magnitude': 4.5,
           'add_before_learning_on_target': True,
           'log': True,
           'plot_bandwidth': False,
@@ -139,7 +143,7 @@ s = smoothing(catalogue = catalogue,
 #     print res
 
 #s.plot_stationary_rate = True
-x, y, r = s.stationary_rate_model(s.r, s.t, r_min=1.0e-12, k=5, a=100, 
+x, y, r = s.stationary_rate_model(s.r, s.t, r_min=1.0e-4, k=5, a=100, 
                                   normalized=False,
                                   )
 # # area normalization...
