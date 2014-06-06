@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap, shiftgrid, cm
 from matplotlib.mlab import griddata
 
+#plt.xkcd()
+
 class rate_map(object):
     def __init__(self, x, y, rate, title, (nx,ny), catalogue=None, origin='upper'):
         
@@ -58,7 +60,7 @@ class rate_map(object):
 #                           latlon=True
 #                         )
 
-        cs = self.m.imshow(rate.T, 
+        cs = self.m.imshow(rate, 
                            plt.cm.RdYlGn_r,
 #                           plt.cm.Spectral_r,
                            origin=origin,

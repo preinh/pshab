@@ -36,7 +36,14 @@ res, spc = 0.5, 100
 
 # model
 #[xmin, xmax, spcx, ymin, ymax, spcy, zmin, spcz]
-grid_limits = Grid.make_from_list([ -80, -30, res, -37, 13, res, 0, 30, 30])
+#_l = [ 118.5,  124,  res,  20.0,   26.5,  res,    0,   300,   300]
+_l = [ -80,  -30,  res,  -37,   13,  res,    0,   30,   30]
+grid_limits = Grid.make_from_list(_l)
+
+nx = round((_l[1] - _l[0]) / _l[2],0)
+ny = round((_l[4] - _l[3]) / _l[5],0)
+grid_shape = (nx, ny)
+
 model = SmoothedSeismicity(grid_limits, bvalue=1.0)
 
 # Time-varying completeness
@@ -45,7 +52,7 @@ comp_table = np.array([[1980., 3.5],
                        [1960., 5.0]])
 
 #config
-config = {'Length_Limit': 3., 'BandWidth': 150., 'increment': 1.0}
+config = {'Length_Limit': 3., 'BandWidth': 150., 'increment': True}
 
 #smoothing
 o = model.run_analysis(catalogue,
@@ -57,15 +64,18 @@ o = model.run_analysis(catalogue,
 
 x = o[:, 0]
 y = o[:, 1]
-r = o[:, 4] / (res**2)
+r = o[:, 4]  #/ (res**2)
+
 r = np.array([ np.log10(r) if  r > 0 else np.NaN for r in r ])
 #r = np.log10(r)
+r[r < 0] = 0.
+#r = 
 
 #print np.sqrt(len(x))
 
 from map import rate_map
 m = rate_map(x, y, r, "a-value [Frankel1995] h=%d km"%config['BandWidth'], 
-             spc, catalogue)
+            (nx,ny), catalogue)
 m.show()
 
 #print output_data

@@ -35,6 +35,19 @@ res, spc = 0.5, 100
 #res, spc = 2, 25
 #res, spc = 0.25, 200
 
+
+# model
+#[xmin, xmax, spcx, ymin, ymax, spcy, zmin, spcz]
+#_l = [ 118.5,  124,  res,  20.0,   26.5,  res,    0,   300,   300]
+_l = [ -80,  -30,  res,  -37,   13,  res,    0,   30,   30]
+#grid_limits = Grid.make_from_list(_l)
+
+nx = round((_l[1] - _l[0]) / _l[2],0)
+ny = round((_l[4] - _l[3]) / _l[5],0)
+grid_shape = (nx, ny)
+
+
+
 b_value = 1.0
 
 # model
@@ -104,7 +117,7 @@ from map import rate_map
 #print len(x), len(y), len(r), sqrt()
 
 m = rate_map(x, y, r, "a-value [Woo1996]  h(m) = %.2fe**(%.2f*m) km"%(model.c, model.d), 
-             spc, catalogue=catalogue, origin='lower')
+             (nx,ny), catalogue=catalogue, origin='lower')
 m.show()
 
 

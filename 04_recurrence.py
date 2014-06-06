@@ -26,7 +26,8 @@ print 'Import OK!'
 
 # In[ ]:
 
-input_file = 'data_input/hmtk_bsb2013.csv'
+#input_file = 'data_input/hmtk_bsb2013.csv'
+input_file = 'data_input/hmtk_sa.csv'
 
 parser = CsvCatalogueParser(input_file)
 catalogue = parser.read_file()
@@ -50,7 +51,7 @@ stepp = Stepp1971()
 
 completeness_config = {'magnitude_bin': 1,
                        'time_bin': 5,
-                       'increment_lock': False}
+                       'increment_lock': True}
 print completeness_config
 
 # Run analysis
@@ -60,31 +61,36 @@ print completeness_table
 print 'done!'
 
 
-# In[ ]:
+completeness_table =np.array([[1.985e+03,  4.0],
+                              [1.950e+03,  5.0],
+                              [1.913e+03,  6.0],
+                              [1.735e+03,  7.0]])
+
+
 
 from hmtk.plotting.seismicity.catalogue_plots import (plot_observed_recurrence, 
                                                       get_completeness_adjusted_table,
                                                       _get_catalogue_bin_limits)
+magnitude_bin = 0.2
+end_year = 2014
 
-magnitude_bin = 0.1
-end_year = 2010
-
-earthquake_count = get_completeness_adjusted_table(catalogue, 
-                                                   completeness_table, 
-                                                   magnitude_bin, 
-                                                   catalogue.end_year)
+# earthquake_count = get_completeness_adjusted_table(catalogue, 
+#                                                    completeness_table, 
+#                                                    magnitude_bin, 
+#                                                    catalogue.end_year)
 #print 'Magnitude  N(OBS)     N(CUM)   Log10(Nc)'
 #for row in earthquake_count:
 #    print '%6.2f %10.3f %10.3f %10.3f' %(row[0], row[1], row[2], row[3]) 
 
-plot_observed_recurrence(catalogue, completeness_table, magnitude_bin, catalogue.end_year)
 
+
+plot_observed_recurrence(catalogue, completeness_table, magnitude_bin, catalogue.end_year)
 
 # In[ ]:
 
 # Set up the configuration parameters
-recurrence_config = {'reference_magnitude': None,
-                     'magnitude_interval': 0.5,
+recurrence_config = {'reference_magnitude': 0.0,
+                     'magnitude_interval': 0.2,
                      'Average Type': 'Weighted'}
 
 bml_recurrence = BMaxLikelihood()
@@ -94,20 +100,8 @@ bval, sigmab, seismicity_rate, sigma_rate = bml_recurrence.calculate(catalogue,
                                                           completeness_table)
 
 print 'B-value = %9.4f +/- %9.4f' %(bval, sigmab)
-print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(seismicity_rate, sigma_rate)
+print 'Rate = %9.4f +/- %9.4f' %(seismicity_rate, sigma_rate)
 
-
-# In[ ]:
-
-# Set up the configuration parameters
-bks_recurrence = KijkoSmit()
-
-bval, sigmab, seismicity_rate, sigma_rate = bks_recurrence.calculate(catalogue, 
-                                                          recurrence_config, 
-                                                          completeness_table)
-
-print 'B-value = %9.4f +/- %9.4f' % (bval, sigmab)
-print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' % (seismicity_rate, sigma_rate)
 
 
 # In[ ]:
@@ -120,10 +114,22 @@ bval, sigmab, seismicity_rate, sigma_rate = bwc_recurrence.calculate(catalogue,
                                                           completeness_table)
 
 print 'B-value = %9.4f +/- %9.4f' %(bval, sigmab)
-print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' %(seismicity_rate, sigma_rate)
+print 'Rate = %9.4f +/- %9.4f' %(seismicity_rate, sigma_rate)
 
 
 # In[ ]:
+# In[ ]:
+
+# Set up the configuration parameters
+bks_recurrence = KijkoSmit()
+ 
+bval, sigmab, seismicity_rate, sigma_rate = bks_recurrence.calculate(catalogue, 
+                                                          recurrence_config, 
+                                                          completeness_table)
+ 
+print 'B-value = %9.4f +/- %9.4f' % (bval, sigmab)
+print 'Rate (M >= 4.0) = %9.4f +/- %9.4f' % (seismicity_rate, sigma_rate)
+
 
 
 
