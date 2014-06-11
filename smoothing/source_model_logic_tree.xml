@@ -6,7 +6,7 @@
             <logicTreeBranchSet uncertaintyType="sourceModel"
                                 branchSetID="bs1">
                 <logicTreeBranch branchID="b1">
-                    <uncertaintyModel>source_model.xml</uncertaintyModel>
+                    <uncertaintyModel>source_model_pshab_decluster_frankel1995.xml</uncertaintyModel>
                     <uncertaintyWeight>1.0</uncertaintyWeight>
                 </logicTreeBranch>
             </logicTreeBranchSet>

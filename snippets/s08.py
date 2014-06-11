@@ -9,7 +9,7 @@ import numpy as np
 
 m0=3.0
 sources = []
-smooth = np.genfromtxt("../hmtk_bsb2013_decluster_smooth_data.csv", delimiter=",",skip_header=True)
+smooth = np.genfromtxt("../data_output/hmtk_bsb2013_decluster_frankel1995.csv", delimiter=",",skip_header=True)
 for i, line in enumerate(smooth):
     #print line
     p = mtkPointSource(identifier = i,
@@ -17,7 +17,7 @@ for i, line in enumerate(smooth):
         trt='Stable Continental Crust',
         geometry = geo.point.Point(line[0], line[1]),
         upper_depth = 0.,
-        lower_depth = 30.,
+        lower_depth = 90.,
         mag_scale_rel="WC1994", # default
         rupt_aspect_ratio=1.0,
         mfd=models.TGRMFD(min_mag=m0, 
@@ -30,8 +30,8 @@ for i, line in enumerate(smooth):
     sources.append(p)
  
 s = source_model.mtkSourceModel(identifier="02", 
-                                name = "PSHAB-Smoothed (decluster)", 
+                                name = "pshab frankel1995", 
                                 sources = sources)
  
-s.serialise_to_nrml(filename = "source_model_pshab_decluster_smooth.xml", 
+s.serialise_to_nrml(filename = "../smoothing/source_model_pshab_decluster_frankel1995.xml", 
                     use_defaults = True)

@@ -34,6 +34,22 @@ h = h*1.e-3
 
 from map import hazard_map
 
-m = hazard_map(x, y, h, "PGA (g) poe 10%, 50 years [dourado2014] CRISIS2007", 
+m = hazard_map(x, y, h, "Dourado2014 (10%/50y) [CRISIS2007]", 
                (50, 50), origin='lower')
+
+
+from hmtk.parsers.source_model.nrml04_parser import nrmlSourceModelParser
+
+source_model_file = "/Users/pirchiner/dev/pshab/dourado_reproduction/source_model.xml"
+
+# read source model file
+parser = nrmlSourceModelParser(source_model_file)
+source_model = parser.read_file(2.0)
+
+# add source model
+#basemap1.add_source_model(source_model, area_border, border_width, point_marker, point_size, overlay)    
+m.basemap.add_source_model(source_model, border_width=0.5, overlay=True)    
+    
+
+
 m.show()

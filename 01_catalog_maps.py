@@ -4,12 +4,12 @@
 ###    Imports 
 ###
 
-import pickle
-
 # Python Numerical and Plotting Libraries
+import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 plt.xkcd()
+
 # HMTK Catalogue Import/Export Libraries
 from hmtk.parsers.catalogue.csv_catalogue_parser import CsvCatalogueParser, CsvCatalogueWriter
 
@@ -30,6 +30,7 @@ print 'Imports OK!'
 map_dpi = 150 
 add_geology = True
 add_sourcemodel = True
+savefig=False
 
 #map_title = 'Brazilian Seismic Zones'
 map_title = 'BSB-2013.08 Catalogue and Seismic Zoning'
@@ -237,92 +238,13 @@ basemap1.add_catalogue(catalogue)
 #basemap1.add_colour_scaled_points(x, y, np.log(z+1), overlay=True)
 
 
-basemap1.savemap("/Users/pirchiner/Desktop/teste.png")
+if savefig: basemap1.savemap("/Users/pirchiner/Desktop/teste.png")
 plt.show()
-exit()
+#exit()
 
-
-
-
-
-# In[ ]:
 
 # Limit the catalogue to the time period 1960 - 2012
 #valid_time = np.logical_and(catalogue.data['year'] >= 1960,
 #                            catalogue.data['year'] <= 2014)
 #catalogue.select_catalogue_events(valid_time)
-#plot_magnitude_time_density(catalogue, 0.5, 2.0)
-#print 'Catalogue now contains %s events' % catalogue.get_number_events()
-
-
-# In[ ]:
-
-# Show distribution of magnitudes with time
-#plot_magnitude_time_scatter(catalogue, fmt_string='.')
-
-
-# In[ ]:
-
-# Plot the magnitude-time density
-magnitude_bin = 0.5
-time_bin = 5.0 # in Decimal Years
-plot_magnitude_time_density(catalogue, magnitude_bin, time_bin)
-
-
-
-# In[ ]:
-
-# Depth histogram
-#plot_depth_histogram(catalogue, 10.)
-
-
-# In[ ]:
-
-# Time-varying completeness
-completeness = np.array([[1980., 3.0],
-                         [1985., 4.0],
-                         [1964., 5.0],
-                         [1910., 6.5],
-                         [1900., 9.0]])
-plot_observed_recurrence(catalogue, completeness, 0.2, catalogue.end_year)
-
-
-# In[ ]:
-
-# Limit the catalogue to depths less than 50 km
-#valid_depth = catalogue.data['depth'] <= 50.
-#catalogue.select_catalogue_events(valid_depth)
-plot_depth_histogram(catalogue, 2.0)
-
-exit()
-# In[ ]:
-
-# Set-up the file writer
-output_file_name = 'data_output/basic_demo_catalogue_1.csv'
-writer = CsvCatalogueWriter(output_file_name)
-
-# Write the catalogue to file
-writer.write_file(catalogue)
-
-print 'File %s written' % output_file_name
-
-
-# In[ ]:
-
-completeness = np.array([[1985., 4.0],
-                         [1964., 5.0],
-                         [1910., 6.5]])
-# Set-up the exporter
-output_file_name = 'data_output/basic_demo_catalogue_complete_1.csv'
-writer = CsvCatalogueWriter(output_file_name)
-
-# Write the catalogue to file, purging events from the incomplete period
-writer.write_file(catalogue, magnitude_table=completeness)
-
-print 'File %s written' % output_file_name
-
-
-# In[ ]:
-
-
 
