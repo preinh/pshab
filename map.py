@@ -199,7 +199,7 @@ class hazard_map(object):
         cs = self.basemap.m.imshow(resampled, 
                            extent=extent,
                            cmap=plt.cm.hot_r,
-                           vmin=0, #vmax=2.5,
+                           vmin=0, vmax=2.5,
                            )
         #plt.plot(xs0, ys0, "r.")
         #plt.plot(xs, ys, "b.")

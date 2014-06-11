@@ -5,7 +5,7 @@ import numpy as np
 
 method = "frankel1995"
 #method = "woo1996"
-method = "helmstetter2012"
+#method = "helmstetter2012"
 #method = "oq-dourado2014"
 
 filename = "data_output/poe_0.1_smooth_decluster_%s.csv"%(method)
@@ -30,7 +30,8 @@ h = d[:,2]
 #print len(x), np.sqrt(len(x))
 
 from map import hazard_map
+title = "PGA (poe 10%%, 50 years) [ %s ]"%method
 
-m = hazard_map(x, y, h, "PGA (g) poe 10%, 50 years [helmstetter2012]", 
+m = hazard_map(x, y, h, title, 
                (50, 50), origin='lower')
 m.show()

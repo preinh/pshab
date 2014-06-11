@@ -18,7 +18,7 @@ for i, line in enumerate(smooth):
             trt='Stable Continental Crust',
             geometry = geo.point.Point(line[0], line[1]),
             upper_depth = 0.,
-            lower_depth = 90.,
+            lower_depth = 40.,
             mag_scale_rel="WC1994", # default
             rupt_aspect_ratio=1.0,
             mfd=models.TGRMFD(min_mag=m0, 
