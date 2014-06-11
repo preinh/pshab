@@ -39,7 +39,7 @@ for i, f_geom in enumerate(glob.glob("*.eq.src")):
                   trt = "Stable Continental Crust", 
                   geometry = geom, 
                   upper_depth = "0", 
-                  lower_depth = "30", 
+                  lower_depth = "40", 
                   mag_scale_rel = "WC1994", # default 
                   rupt_aspect_ratio = 1, 
                   mfd = mfd, 

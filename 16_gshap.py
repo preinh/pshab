@@ -88,7 +88,7 @@ def map(data, config):
 
 
         cs = m.imshow(zi, plt.cm.hot_r, 
-                    vmin=0, vmax=0.25, origin='lower',
+                    vmin=0, vmax=0.2, origin='lower',
                     extent=[x.min(), x.max(), y.min(), y.max()],
                     label="pga [g]")
 
