@@ -11,23 +11,24 @@ m0=3.0
 sources = []
 smooth = np.genfromtxt("../data_output/hmtk_bsb2013_decluster_frankel1995.csv", delimiter=",",skip_header=True)
 for i, line in enumerate(smooth):
-    #print line
-    p = mtkPointSource(identifier = i,
-        name = "%s"%i,
-        trt='Stable Continental Crust',
-        geometry = geo.point.Point(line[0], line[1]),
-        upper_depth = 0.,
-        lower_depth = 90.,
-        mag_scale_rel="WC1994", # default
-        rupt_aspect_ratio=1.0,
-        mfd=models.TGRMFD(min_mag=m0, 
-                          max_mag=7.0,
-                          a_val=float(line[4]), 
-                          b_val=1.0),
-        nodal_plane_dist=None,
-        hypo_depth_dist=None)
- 
-    sources.append(p)
+    if not np.isnan(line[4]):
+        #print line
+        p = mtkPointSource(identifier = i,
+            name = "%s"%i,
+            trt='Stable Continental Crust',
+            geometry = geo.point.Point(line[0], line[1]),
+            upper_depth = 0.,
+            lower_depth = 90.,
+            mag_scale_rel="WC1994", # default
+            rupt_aspect_ratio=1.0,
+            mfd=models.TGRMFD(min_mag=m0, 
+                              max_mag=7.0,
+                              a_val=float(line[4]), 
+                              b_val=1.0),
+            nodal_plane_dist=None,
+            hypo_depth_dist=None)
+     
+        sources.append(p)
  
 s = source_model.mtkSourceModel(identifier="02", 
                                 name = "pshab frankel1995", 
