@@ -85,7 +85,7 @@ class rate_map(object):
                            cmap=plt.cm.RdYlGn_r,
 #                           plt.cm.Spectral_r,
                            origin=origin,
-                           vmin=0, vmax=3,
+                           vmin=-3, vmax=3,
                            )
         self.ax.set_xlabel("longitude")
         self.ax.set_ylabel("latitude")
