@@ -3,13 +3,13 @@
 import numpy as np
 
 
-method = "frankel1995"
+#method = "frankel1995"
 #method = "woo1996"
 #method = "helmstetter2012"
-#method = "oq-dourado2014"
+method = "oq-dourado2014_b2"
 
-filename = "data_output/poe_0.1_smooth_decluster_%s.csv"%(method)
-#filename = "data_output/poe_0.1_%s.csv"%(method)
+#filename = "data_output/poe_0.1_smooth_decluster_%s.csv"%(method)
+filename = "data_output/poe_0.1_%s.csv"%(method)
 
 
 d = np.genfromtxt(fname=filename, 

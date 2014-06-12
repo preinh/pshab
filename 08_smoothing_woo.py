@@ -17,7 +17,7 @@ from hmtk.seismicity.smoothing.kernels.woo_1996 import \
 
 BASE_PATH = 'data_input/'
 OUTPUT_FILE = 'data_output/hmtk_bsb2013_decluster_woo1996.csv'
-TEST_CATALOGUE = 'hmtk_bsb2013_decluster.csv'
+TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 
@@ -30,8 +30,8 @@ catalogue.sort_catalogue_chronologically()
 #print np.min(catalogue.data['magnitude'])
 
 
-res, spc = 0.5, 100
-#res, spc = 1, 50
+#res, spc = 0.5, 100
+res, spc = 1, 50
 #res, spc = 2, 25
 #res, spc = 0.25, 200
 
@@ -76,6 +76,28 @@ comp_table = np.array([[1990., 3.0],
 #                        [1900., 6.5],
 #                        [1800., 7.0]])
 
+
+comp_table = np.array([  [ 1986,      3. ],
+                 [ 1986,      3.5],
+                 [ 1986,      4. ],
+                 [ 1960,      4.5],
+                 [ 1958,      5. ],
+                 [ 1958,      5.5],
+                 [ 1927,      6. ],
+                 [ 1898,      6.5],
+                 [ 1885,      7. ],
+                 [ 1885,      7.5],
+                 [ 1885,      8. ]])
+
+comp_table = np.array([[ 1980, 3. ],
+                       [ 1975, 3.5],
+                       [ 1975, 4. ],
+                       [ 1965, 4.5],
+                       [ 1965, 5. ],
+                       [ 1860, 5.5],
+                       [ 1860, 6. ]])
+
+
 #config
 #config = {'Length_Limit': 3., 'BandWidth': 100., 'increment': True, 'MagnitudeBinSize': 0.5 }
 
@@ -110,13 +132,14 @@ r = o[:, 2]
 #r = np.array([ np.log10(r) if  r >= 1 else 0 for r in r ])
 #r = np.array([ np.log10(r) if  r >= 1 else 0 for r in r ])
 
-print np.sqrt(len(x))
+#print np.sqrt(len(x))
 
 from map import rate_map
 
 #print len(x), len(y), len(r), sqrt()
-
-m = rate_map(x, y, r, "a-value [Woo1996]  h(m) = %.2fe**(%.2f*m) km"%(model.c, model.d), 
+print model.c, model.d
+#m = rate_map(x, y, r, "a-value [Woo1996]  $h(m) = %.2f e^{(%.2f m)}$ km"%(model.c, model.d), 
+m = rate_map(x, y, r, "a-value [Woo1996]", 
              (nx,ny), catalogue=catalogue, origin='lower')
 m.show()
 

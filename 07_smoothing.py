@@ -20,10 +20,10 @@ BASE_PATH = 'data_input/'
 #OUTPUT_FILE = 'data_output/hmtk_bsb2013_decluster_frankel1995.csv'
 OUTPUT_FILE = '/Users/pirchiner/dev/pshab/data_output/hmtk_sa3_decluster_frankel1995.csv'
 
-#model_name = 'hmtk_bsb2013'
-model_name = 'hmtk_sa3'
-#TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
-TEST_CATALOGUE = 'hmtk_sa3_pp_decluster.csv'
+model_name = 'hmtk_bsb2013'
+#model_name = 'hmtk_sa3'
+TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
+#TEST_CATALOGUE = 'hmtk_sa3_pp_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 
@@ -43,8 +43,8 @@ res, spc = 1, 50
 #[xmin, xmax, spcx, ymin, ymax, spcy, zmin, spcz]
 map_config = {'min_lon': -95.0, 'max_lon': -25.0, 'min_lat': -65.0, 'max_lat': 25.0, 'resolution':'l'}
 #_l = [ 118.5,  124,  res,  20.0,   26.5,  res,    0,   300,   300]
-_l = [ -95.,  -25,  res,  -65,   25,  res,    0,   800,   800]
-#_l = [ -80,  -30,  res,  -37,   13,  res,    0,   30,   30]
+#_l = [ -95.,  -25,  res,  -65,   25,  res,    0,   800,   800]
+_l = [ -80,  -30,  res,  -37,   13,  res,    0,   30,   30]
 grid_limits = Grid.make_from_list(_l)
 
 nx = round((_l[1] - _l[0]) / _l[2],0)
