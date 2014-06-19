@@ -35,7 +35,7 @@ savefig=False
 plot_mag_time_count = False
 
 #map_title = 'Brazilian Seismic Zones'
-map_title = 'BSB-2013.08 Catalogue and Seismic Zoning'
+map_title = '\gls{bsb2013}.08 Catalogue and Seismic Zoning'
 #map_title = 'ISC-GEM Catalogue'
 #map_title = 'South-American Lithology'
 

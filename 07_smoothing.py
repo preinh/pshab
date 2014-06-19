@@ -21,9 +21,9 @@ BASE_PATH = 'data_input/'
 OUTPUT_FILE = '/Users/pirchiner/dev/pshab/data_output/hmtk_sa3_decluster_frankel1995.csv'
 
 model_name = 'hmtk_bsb2013'
-#model_name = 'hmtk_sa3'
-TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
-#TEST_CATALOGUE = 'hmtk_sa3_pp_decluster.csv'
+model_name = 'hmtk_sa3'
+#TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
+TEST_CATALOGUE = 'hmtk_sa3_pp_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 
@@ -107,8 +107,8 @@ r[r < 0] = 0.
 #print np.sqrt(len(x))
 
 from map import rate_map
-m = rate_map(x, y, r, "a-value [Frankel1995]", 
-            (nx,ny), catalogue=None, origin='lower')
+m = rate_map(x, y, r, "a-value [frankel1995]", 
+            (nx,ny), catalogue=catalogue, origin='lower')
 m.show()
 
 #print output_data

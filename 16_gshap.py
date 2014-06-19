@@ -3,6 +3,20 @@ import numpy as np
 import scipy.interpolate
 import csv
 
+
+
+# catalogue
+import os
+from hmtk.parsers.catalogue.csv_catalogue_parser import CsvCatalogueParser
+BASE_PATH = 'data_input/'
+TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
+_CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
+parser = CsvCatalogueParser(_CATALOGUE)
+catalogue = parser.read_file()
+catalogue.sort_catalogue_chronologically()
+
+
+
 import matplotlib.pyplot as plt
 
 from mpl_toolkits.basemap import Basemap, shiftgrid, cm
@@ -50,7 +64,7 @@ def map(data, config):
     
         f = plt.figure()
         ax = f.add_axes([0.1,0.1,0.8,0.8])
-        ax.set_title("PGA (poe 10% / 50y) [GSHAP]")
+        ax.set_title("PGA (poe 10%, 50 years) [ gshap ]")
         
         m = Basemap(projection='cyl', 
                     llcrnrlon = x0,
@@ -88,7 +102,7 @@ def map(data, config):
 
 
         cs = m.imshow(zi, plt.cm.hot_r, 
-                    vmin=0, vmax=0.2, origin='lower',
+                    vmin=0, vmax=0.16, origin='lower',
                     extent=[x.min(), x.max(), y.min(), y.max()],
                     label="pga [g]")
 
@@ -129,14 +143,13 @@ def map(data, config):
                      #extend='both',
  #                    )
 #        plt.colorbar()
-#         if self.catalogue:
-#             x = self.catalogue.data['longitude']
-#             y = self.catalogue.data['latitude']
-#             mag = self.catalogue.data['magnitude']
-#             
-#             self.m.scatter(x, y, s=np.exp(mag), 
-#                            marker='o', facecolors='none', edgecolors='k', alpha=0.1
-#                            )
+        x = catalogue.data['longitude']
+        y = catalogue.data['latitude']
+        mag = catalogue.data['magnitude']
+         
+        m.scatter(x, y, s=np.exp(mag), 
+                       marker='o', facecolors='none', edgecolors='k', alpha=0.1
+                       )
 
         fig_name = "/Users/pirchiner/Desktop/gshap.png"
         plt.savefig(fig_name, dpi=150, format='png')

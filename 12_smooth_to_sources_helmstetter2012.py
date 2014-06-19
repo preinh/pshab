@@ -4,6 +4,19 @@ from openquake.hazardlib import geo
 from hmtk.sources import source_model, point_source
 from hmtk.sources.point_source import mtkPointSource
 
+
+# catalogue
+import os
+from hmtk.parsers.catalogue.csv_catalogue_parser import CsvCatalogueParser
+BASE_PATH = 'data_input/'
+TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
+_CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
+parser = CsvCatalogueParser(_CATALOGUE)
+catalogue = parser.read_file()
+catalogue.sort_catalogue_chronologically()
+
+
+
 import glob
 import numpy as np
 
@@ -61,7 +74,7 @@ from map import rate_map
 
 #print len(x), len(y), len(r), sqrt()
 m = rate_map(x, y, r, "a-value Helmstetter2012", 
-             (n,n), origin='lower')
+             (n,n), catalogue=catalogue, origin='lower')
 m.show()
 
        

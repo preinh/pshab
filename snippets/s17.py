@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pylab as plt
-
+plt.xkcd()
 
 # HMTK Catalogue Import/Export Libraries
 from hmtk.parsers.catalogue.csv_catalogue_parser import CsvCatalogueParser, CsvCatalogueWriter
@@ -59,7 +59,7 @@ def F_trugr(m, b=1, m_min=2.0, m_max=5.0):
     return _r
 
 
-def F_kagan(m, b=1, m_min=2.0, m_max=8.0):
+def F_kagan(m, b=1, m_min=2.0, m_max=8):
     _r = 10**(-b*(m - m_min)) * np.exp( 10**(1.5*(m_min - m_max)) - 10**(1.5*(m - m_max)))
     #print _r
     _i = np.logical_or((m < m_min), (m > m_max + .3))
@@ -180,13 +180,13 @@ if __name__ == "__main__":
 # #     ax2.semilogy(m, truncated_pareto(m, 1), label="trun_P")
 # #     ax2.semilogy(m, tapered_pareto(m, 1), label="tap-P")
     ax2.semilogy(m, bgr(m, 6),'.', alpha=0.5, label="Bounded GR")
-#     ax2.semilogy(m, 1e8*tgr(m),'-.',lw=2.0 ,alpha=0.7, label="Truncated GR")
-#     ax2.semilogy(m, 1e5*dtgr(m),'-',lw=2.0,  alpha=0.5, label="Double Truncated GR")
+    ax2.semilogy(m, 1e8*tgr(m),'-.',lw=2.0 ,alpha=0.7, label="Truncated GR")
+    ax2.semilogy(m, 1e5*dtgr(m),'-',lw=2.0,  alpha=0.5, label="Double Truncated GR")
     ax2.semilogy(m, 1e6*F_kagan(m), '.' , alpha=0.5,  label="Kagan (Tapered Pareto)")
 #    ax2.semilogy(m, gr(m, a), label="gr")
     
 #    print catalogue.data['magnitude']
-    ax2.hist(catalogue.data['magnitude'], bins=10, histtype='step',  label="subset from Chilean's catalog")
+    ax2.hist(catalogue.data['magnitude'], color='darkgreen', bins=10, histtype='step',  label="subset from Chilean's catalog")
 
     
 #    ax2.set_ylim(1e-6, 1e2)

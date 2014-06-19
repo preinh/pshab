@@ -85,13 +85,13 @@ class rate_map(object):
                            cmap=plt.cm.RdYlGn_r,
 #                           plt.cm.Spectral_r,
                            origin=origin,
-                           vmin=-3, vmax=3,
+                           vmin=0, vmax=2.5,
                            )
         self.ax.set_xlabel("longitude")
         self.ax.set_ylabel("latitude")
         
         _cb = plt.colorbar(cs, 
-                     #extend='both',
+                     extend='max',
                      )
 
         _cb.ax.tick_params(labelsize='small')
@@ -198,8 +198,9 @@ class hazard_map(object):
         
         cs = self.basemap.m.imshow(resampled, 
                            extent=extent,
+                           #cmap=plt.cm.RdBu,
                            cmap=plt.cm.hot_r,
-                           vmin=0, vmax=0.2,
+                           vmin=0, vmax=.16,
                            )
         #plt.plot(xs0, ys0, "r.")
         #plt.plot(xs, ys, "b.")
@@ -223,14 +224,14 @@ class hazard_map(object):
                      )
         _cb.ax.tick_params(labelsize='small')
         _cb.set_label('PGA [g]', fontsize='small')
-#         if self.catalogue:
-#             x = self.catalogue.data['longitude']
-#             y = self.catalogue.data['latitude']
-#             mag = self.catalogue.data['magnitude']
-#             
-#             self.m.scatter(x, y, s=np.exp(mag), 
-#                            marker='o', facecolors='none', edgecolors='k', alpha=0.1
-#                            )
+        if self.catalogue:
+            x = self.catalogue.data['longitude']
+            y = self.catalogue.data['latitude']
+            mag = self.catalogue.data['magnitude']
+             
+            self.basemap.m.scatter(x, y, s=np.exp(mag), 
+                           marker='o', facecolors='none', edgecolors='0.4', alpha=0.1
+                           )
 
     def show(self):
         plt.show()        

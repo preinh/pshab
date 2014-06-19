@@ -110,7 +110,7 @@ from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 plt.gca().invert_yaxis()
 plt.xlabel("# earthquakes")
 plt.ylabel("depth [km]")
-plt.title("Depth Distribution - BSB-2013.08")
+plt.title("Depth Distribution - \gls{bsb2013}.08")
 #plt.title("Depth Distribution - ISC-GEM")
  
 #plt.savefig("/Users/pirchiner/Desktop/teste.png", format='png')

@@ -27,13 +27,13 @@ print 'Imports OK!'
 ###    Map Config 
 ###
 
-map_dpi = 150 
-add_geology = True
+map_dpi = 90 
+add_geology = False
 add_sourcemodel = True
 savefig=False
 
 #map_title = 'Brazilian Seismic Zones'
-map_title = 'BSB-2013.08 Catalogue and Seismic Zoning'
+map_title = 'Seismic Zoning [ dourado2014 ]'
 #map_title = 'ISC-GEM Catalogue'
 #map_title = 'South-American Lithology'
 
@@ -233,7 +233,7 @@ z = catalogue.data['depth']
 
 _idx = np.argsort(z)
 catalogue.select_catalogue_events(_idx)
-basemap1.add_catalogue(catalogue)
+basemap1.add_catalogue(catalogue, alpha=0.1)
 
 #basemap1.add_colour_scaled_points(x, y, np.log(z+1), overlay=True)
 

@@ -1,5 +1,22 @@
 # -*- coding: utf-8 -*-
 
+
+
+
+
+# catalogue
+import os
+from hmtk.parsers.catalogue.csv_catalogue_parser import CsvCatalogueParser
+BASE_PATH = 'data_input/'
+TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
+_CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
+parser = CsvCatalogueParser(_CATALOGUE)
+catalogue = parser.read_file()
+catalogue.sort_catalogue_chronologically()
+
+
+
+
 import numpy as np
 
 
@@ -34,8 +51,8 @@ h = h*1.e-3
 
 from map import hazard_map
 
-m = hazard_map(x, y, h, "Dourado2014 (10%/50y) [CRISIS2007]", 
-               (50, 50), origin='lower')
+m = hazard_map(x, y, h, "PGA (poe 10%, 50 years) [ dourado2014, crisis2007 ]", 
+               (50, 50), catalogue=catalogue, origin='lower')
 
 
 from hmtk.parsers.source_model.nrml04_parser import nrmlSourceModelParser

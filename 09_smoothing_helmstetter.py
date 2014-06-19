@@ -126,7 +126,7 @@ config = {'grid_limits' : grid_limits,
           'target_minimum_magnitude': 4.5,
           'add_before_learning_on_target': True,
           'log': True,
-          'plot_bandwidth': False,
+          'plot_bandwidth': True,
           'plot_rate_timeseries': False,
           'plot_stationary_rate': False,
           'plot_target_events_count': False,
@@ -143,13 +143,13 @@ s = smoothing(catalogue = catalogue,
 #     print res
 
 #s.plot_stationary_rate = True
-x, y, r = s.stationary_rate_model(s.r, s.t, r_min=1.0e-4, k=5, a=100, 
+x, y, r = s.stationary_rate_model(s.r, s.t, r_min=1.0e-4, k=5, a=10, 
                                   normalized=False,
                                   )
 # # area normalization...
 # r = r / (res**2)
 m_min = min(s.learning_catalogue.data['magnitude'])
-a = np.log10(r * m_min) + config['b_value']*m_min
+#a = np.log10(r * m_min) + config['b_value']*m_min
 #a = np.array([ a if  a >= 0 else 0 for a in a ])
 
 print len(s.learning_catalogue.data['magnitude'])
@@ -163,53 +163,55 @@ _m = s.learning_catalogue.data['magnitude']
 
 # import matplotlib.pyplot as plt
 # import matplotlib.gridspec as gridspec
-# 
+ 
 # plt.close('all')
 # f = plt.figure()
-# 
+#  
 # gs1 = gridspec.GridSpec(3, 1)
-# 
+#  
 # ax1 = f.add_subplot(gs1[0])
 # ax2 = f.add_subplot(gs1[1])
 # ax3 = f.add_subplot(gs1[2])
-# 
+#  
 # #print _w
 # alpha = 0.5*np.ones(_w.shape)
 # z = np.zeros(_w.shape)
 # #print alpha
 # color = np.column_stack((_w/255., z, 1 - _w/255., alpha))
 # #exit()
-# 
+#  
 # ax1.hist(_h)
 # ax1.set_title("Distances on 'Time'")
 # ax1.set_xlabel("days")
-# 
+#  
 # ax2.hist(_d)
 # ax2.set_title("Distances on 'Space'")
 # ax2.set_xlabel("km")
-#  
+#   
 # ax3.hist(_w, bins=30)
 # ax3.set_title("Completeness Weights")
 # ax3.set_xlabel("weight")
-#  
+#   
 # gs1.tight_layout(f)
-#  
+#   
 # plt.show()
-# 
+#  
 # plt.close('all')
 # f = plt.figure()
 # ax = f.add_axes([0.1,0.1,0.8,0.8])
 # ax.set_title("DistanceTime Bandwidth Distribution")
 # ax.set_xlabel("distances [km]")
 # ax.set_ylabel("times [days]")
-# 
-# 
+#  
+#  
 # plt.scatter(_d, _h, s=np.exp(_m), cmap=plt.cm.RdYlGn,
 #                  marker='o', facecolors='none', edgecolors=color, #alpha=0.3,
 #                  )
 # #plt.colorbar(cs)
 # plt.show()
 
+
+exit()
 
 from map import rate_map
 m = rate_map(x, y, r, "alpha [Helmstetter2012]", 
