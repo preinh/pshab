@@ -22,7 +22,7 @@ import numpy as np
 
 n=50
 #n=100
-m_min, m_max = 4.0, 7.0
+m_min, m_max = 3.5, 7.0
 o = []
 sources = []
 smooth = np.genfromtxt("data_output/bsb2013_helmstetter2012.csv", delimiter=",",skip_header=False)
