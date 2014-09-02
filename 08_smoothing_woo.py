@@ -32,8 +32,8 @@ catalogue.sort_catalogue_chronologically()
 #print np.min(catalogue.data['magnitude'])
 
 
-#res, spc = 0.5, 100
-res, spc = 1, 50
+res, spc = 0.5, 100
+#res, spc = 1, 50
 #res, spc = 2, 25
 #res, spc = 0.25, 200
 
@@ -107,6 +107,7 @@ config = {'min_magnitude': 3.0 ,
           'magnitude_bin': 0.5, 
           'use3d': False,
           'bandwidth_h_limit': 3,
+          'plot_bandwidth_fit': False,
           }
 
 #smoothing

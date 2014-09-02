@@ -44,8 +44,8 @@ map_title = '\gls{bsb2013}.08 Catalogue and Seismic Zoning'
 ###    Catalogue 
 ###
 
-input_catalogue_file = 'data_input/hmtk_sa3'
-#input_catalogue_file = 'data_input/hmtk_bsb2013'
+#input_catalogue_file = 'data_input/hmtk_sa3'
+input_catalogue_file = 'data_input/hmtk_bsb2013'
 
 ### 
 ###    Catalogue cache or read/cache
@@ -136,22 +136,23 @@ completeness = np.array([[1980., 3.0],
                          [1900., 9.0]])
 plot_observed_recurrence(catalogue, completeness, 0.2, 
                          catalogue.end_year, 
-                         title="Recurrence [Rate / Time]",
-                         overlay=True,
+                         title="Recurrence [#Eq / Time]",
+                         overlay=False,
                          markersize=10,
                          color=['#FEF2D8','#F18C79'],
                          #linewidth=3,
                          alpha=0.6,
                          )
 
+plt.show()
+
+exit()
 
 
 
 
-
-
-#input_catalogue_file = 'data_input/hmtk_sa3'
-input_catalogue_file = 'data_input/hmtk_bsb2013'
+input_catalogue_file = 'data_input/hmtk_sa3'
+#input_catalogue_file = 'data_input/hmtk_bsb2013'
 
 ### 
 ###    Catalogue cache or read/cache
