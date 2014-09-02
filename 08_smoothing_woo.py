@@ -21,6 +21,8 @@ TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
 
+
+
 # catalogue
 parser = CsvCatalogueParser(_CATALOGUE)
 catalogue = parser.read_file()
@@ -108,10 +110,10 @@ config = {'min_magnitude': 3.0 ,
           }
 
 #smoothing
-woo = model.run_analysis(catalogue,
-                     config,
-                     completeness_table=comp_table,
-                     smoothing_kernel = IsotropicGaussianWoo())
+# woo = model.run_analysis(catalogue,
+#                      config,
+#                      completeness_table=comp_table,
+#                      smoothing_kernel = IsotropicGaussianWoo())
 
 m_min = config['min_magnitude']
 #m_min = 3.0

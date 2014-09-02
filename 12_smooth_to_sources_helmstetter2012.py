@@ -73,7 +73,7 @@ r = o[:, 2]
 from map import rate_map
 
 #print len(x), len(y), len(r), sqrt()
-m = rate_map(x, y, r, "a-value Helmstetter2012", 
+m = rate_map(x, y, r, "a-value [Helmstetter2012]", 
              (n,n), catalogue=catalogue, origin='lower')
 m.show()
 
