@@ -5,8 +5,8 @@ from scipy import spatial, optimize
 
 from matplotlib import pylab as pl
 
-k = 8
-a = 20
+k = 3
+a = 1
 
 _x = np.linspace(0, 100, 50)
 _y = np.linspace(0, 100, 50)
