@@ -20,11 +20,14 @@ catalogue.sort_catalogue_chronologically()
 import glob
 import numpy as np
 
-n=50
-#n=100
+#n=50
+n=150
 m_min, m_max = 3.5, 7.0
 o = []
 sources = []
+#filename = "/Users/pirchiner/dev/helmstetter/output/conan/rates_2_280.csv"
+
+#smooth = np.genfromtxt("data_output/bsb2013_helmstetter2012.csv", delimiter=",",skip_header=False)
 smooth = np.genfromtxt("data_output/bsb2013_helmstetter2012.csv", delimiter=",",skip_header=False)
 for i, line in enumerate(smooth):
     #print line
@@ -43,7 +46,7 @@ for i, line in enumerate(smooth):
             trt='Stable Continental Crust',
             geometry = geo.point.Point(line[0], line[1]),
             upper_depth = 0.,
-            lower_depth = 30.,
+            lower_depth = 20.,
             mag_scale_rel="WC1994", # default
             rupt_aspect_ratio=1.0,
             mfd=models.TGRMFD(min_mag=m_min, 

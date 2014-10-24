@@ -7,7 +7,7 @@ from matplotlib.mlab import griddata
 
 from hmtk.plotting.mapping import HMTKBaseMap
 
-plt.xkcd()
+#plt.xkcd()
 
 class rate_map(object):
     def __init__(self, x, y, rate, title, (nx,ny), catalogue=None, origin='upper'):
@@ -78,7 +78,7 @@ class rate_map(object):
         yy = np.linspace(y0,yf,ny)
         xs,ys = np.meshgrid(xx,yy)
         
-        resampled = griddata(lon, lat, rate, xs, ys)
+        resampled = griddata(lon, lat, rate, xs, ys, interp='linear')
         
         cs = self.m.imshow(resampled, 
                            extent=extent, 
