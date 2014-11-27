@@ -16,11 +16,10 @@ from hmtk.seismicity.smoothing.kernels.woo_1996 import \
     IsotropicGaussianWoo
 
 BASE_PATH = 'data_input/'
-OUTPUT_FILE = 'data_output/hmtk_bsb2013_decluster_woo1996.csv'
+OUTPUT_FILE = 'data_output/test_smoothing.csv'
 TEST_CATALOGUE = 'hmtk_bsb2013_pp_decluster.csv'
 
 _CATALOGUE = os.path.join(BASE_PATH,TEST_CATALOGUE)
-
 
 
 # catalogue
@@ -55,49 +54,19 @@ b_value = 1.0
 # model
 #[xmin, xmax, spcx, ymin, ymax, spcy, zmin, spcz]
 grid_limits = utils.Grid.make_from_list([ -80, -30, res, -37, 13, res, 0, 30, 30])
-
+print grid_limits
 model = SmoothedSeismicityWoo(grid_limits, bvalue=b_value)
 
 # Time-varying completeness
-comp_table = np.array([[1980., 3.5],
-                       [1970., 4.5],
-                       [1960., 5.0]])
-
-comp_table = np.array([[1990., 3.0],
-                       [1980., 3.5],
-                       [1970., 4.5],
-                       [1960., 5.0],
-                       [1900., 6.5],
-                       [1800., 7.0]])
-
-# comp_table = np.array([[2000., 2.5],
-#                        [1990., 3.0],
-#                        [1980., 3.5],
-#                        [1970., 4.5],
-#                        [1960., 5.0],
-#                        [1900., 6.5],
-#                        [1800., 7.0]])
-
-
-comp_table = np.array([  [ 1986,      3. ],
-                 [ 1986,      3.5],
-                 [ 1986,      4. ],
-                 [ 1960,      4.5],
-                 [ 1958,      5. ],
-                 [ 1958,      5.5],
-                 [ 1927,      6. ],
-                 [ 1898,      6.5],
-                 [ 1885,      7. ],
-                 [ 1885,      7.5],
-                 [ 1885,      8. ]])
-
-comp_table = np.array([[ 1980, 3. ],
-                       [ 1975, 3.5],
-                       [ 1975, 4. ],
-                       [ 1965, 4.5],
-                       [ 1965, 5. ],
-                       [ 1860, 5.5],
-                       [ 1860, 6. ]])
+comp_table = np.array([[2014., 2.8],
+                       [1975., 3.5],
+                       [1960., 4.0],
+                       [1955., 4.5],
+                       [1950., 5.0],
+                       [1939., 5.5],
+                       [1935., 6.0],
+                       [1930., 6.5],
+                       [1900., 7.0]])
 
 
 #config
@@ -105,22 +74,30 @@ comp_table = np.array([[ 1980, 3. ],
 
 config = {'min_magnitude': 3.0 , 
           'magnitude_bin': 0.5, 
-          'use3d': False,
+          'kernel_type' : 'finite', # finite | infinite
+          'finite_radius' : (10., 250.), # (r_min, r_max) finite kernel radius
+          'fractal_scale_index' : 1.5,
+          'azimuthal_concentration_factor' : 0.0,
+          'completeness_table': comp_table,
+          'grid_parameters': grid_limits,
           'bandwidth_h_limit': 3,
-          'plot_bandwidth_fit': False,
-          }
+          'plot_bandwidth_fit': True,
+          'use3d': False,
+          'output_file': 'test_output_woo.dat'}
 
 #smoothing
-# woo = model.run_analysis(catalogue,
-#                      config,
-#                      completeness_table=comp_table,
-#                      smoothing_kernel = IsotropicGaussianWoo())
+woo = model.run_analysis(catalogue,
+                         config,
+                         smoothing_kernel = IsotropicGaussianWoo())
+
+
+exit()
 
 m_min = config['min_magnitude']
 #m_min = 3.0
 o = []
 for r in woo:
-    _a = np.log10(sum(r[5])*m_min) + b_value*m_min
+    _a = np.log10(sum(r[5])) + b_value*m_min
     #_a = sum(r[5])
     l = [r[0], r[1], _a ]
     #print l
