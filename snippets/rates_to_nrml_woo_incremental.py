@@ -11,7 +11,7 @@ import numpy as np
 
 m0=3.0
 sources = []
-filename = "../data_output/hmtk_bsb2013_woo_rates_incremental.csv"
+filename = "../data_output/test_smoothing.csv"
 
 r = [l for l in csv.reader(open(filename), delimiter=',', quotechar='"')]
 #smooth = np.genfromtxt("../data_output/hmtk_bsb2013_decluster_woo_rates.csv", delimiter=",",skip_header=True)
@@ -40,5 +40,5 @@ s = source_model.mtkSourceModel(identifier="33",
                                 name = "PSHAB-Woo Discrete MFD", 
                                 sources = sources)
  
-s.serialise_to_nrml(filename = "../woo/source_model_pshab_woo_incremental.xml", 
+s.serialise_to_nrml(filename = "../woo/test_source_model_pshab_woo_incremental.xml", 
                     use_defaults = True)

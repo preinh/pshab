@@ -13,7 +13,7 @@ class rate_map(object):
     def __init__(self, x, y, rate, title, (nx,ny), catalogue=None, origin='upper'):
         
         # Configure the limits of the map and the coastline resolution
-        map_config = {'min_lon': -80.0, 'max_lon': -30.0, 'min_lat': -37.0, 'max_lat': 14.0, 'resolution':'l'}
+        map_config = {'min_lon': -80.0, 'max_lon': -30.0, 'min_lat': -37.0, 'max_lat': 13.0, 'resolution':'l'}
         #map_config = {'min_lon': -95.0, 'max_lon': -25.0, 'min_lat': -65.0, 'max_lat': 25.0, 'resolution':'l'}
  
          
@@ -79,6 +79,7 @@ class rate_map(object):
         xs,ys = np.meshgrid(xx,yy)
         
         resampled = griddata(lon, lat, rate, xs, ys, interp='linear')
+        #resampled = griddata(lon, lat, rate, xs, ys)
         
         cs = self.m.imshow(resampled, 
                            extent=extent, 
