@@ -4,7 +4,7 @@ Test suite for smoothed seismicity class
 import os
 import numpy as np
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 from hmtk.parsers.catalogue.csv_catalogue_parser import CsvCatalogueParser
 
